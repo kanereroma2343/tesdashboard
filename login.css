@@ -1,0 +1,126 @@
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #000000, #1e1e4f, #0060f0); /* Black to blue to white gradient */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 20px; /* Add padding for smaller screens */
+}
+
+.login-container {
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent white */
+    backdrop-filter: blur(10px); /* Blur effect */
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Deeper shadow for glass effect */
+    width: 100%;
+    max-width: 400px; /* Set a maximum width */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Light border */
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+
+.logo {
+    display: block; /* Center the logo */
+    margin: 0 auto -20px; /* Center and add margin below */
+    width: 100px; /* Adjust the width as needed */
+    height: auto; /* Maintain aspect ratio */
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 10px;
+    color: white; /* Change text color to white for visibility */
+    text-shadow: 2px 2px 0px black; /* Creates a black outline effect */
+}
+
+
+.form-group {
+    margin-bottom: 15px;
+    margin-right: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: white; /* Change label color to white */
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.5); /* Light border */
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.2); /* Semi-transparent input */
+    color: white; /* Change text color to white */
+}
+
+input[type="text"]::placeholder,
+input[type="password"]::placeholder {
+    color: rgba(255, 255, 255, 0.7); /* Placeholder color */
+}
+
+input[type="checkbox"] {
+    margin-top: 10px;
+    accent-color: #007BFF; /* Checkbox color */
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007BFF; /* Button background */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+.links {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.links a {
+    color: #007BFF; /* Link color */
+    text-decoration: none;
+    transition: color 0.3s ease; /* Smooth transition */
+}
+
+.links a:hover {
+    text-decoration: underline;
+    color: #0056b3; /* Change link color on hover */
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 600px) { /* Adjusted from 100px to 600px for better responsiveness */
+    .login-container {
+        padding: 20px; /* Reduce padding for smaller screens */
+    }
+
+    h2 {
+        font-size: 24px; /* Adjust heading size */
+    }
+
+    input[type="text"],
+    input[type="password"],
+    button {
+        padding: 12px; /* Adjust padding for inputs and button */
+    }
+
+    .links {
+        flex-direction: column; /* Stack links vertically */
+        align-items: center; /* Center links */
+    }
+
+    .links a {
+        margin-bottom: 5px; /* Add space between links */
+    }
+}

@@ -1,0 +1,117 @@
+Province
+Last Name
+First Name
+Middle Initial
+Extension
+Sex (Male / Female)
+Complete Address
+Training Institution 
+Type of Training Institution (Public/Private)
+E-Mail Address
+Contact Number
+Educational Attainment
+Training Experience 
+Practice of Qualification
+
+Sector
+Qualification
+Certificate Number
+Date of Issuance
+Expiration Date
+Certification Number
+Date Issued
+Expiration Date
+Assessor 1
+Assessor 2
+Assessor 3 
+
+
+Database
+
+
+CREATE DATABASE IF NOT EXISTS nttc_data;
+
+USE nttc_data;
+
+CREATE TABLE trainer_profiles (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    province VARCHAR(100),
+    last_name VARCHAR(100),
+    first_name VARCHAR(100),
+    middle_initial CHAR(1),
+    extension VARCHAR(10),
+    sex ENUM('Male', 'Female'),
+    address VARCHAR(100),
+    training_institution VARCHAR(255),
+    institution_type ENUM('Public', 'Private'),
+    email VARCHAR(255),
+    contact_number VARCHAR(20),
+    educational_attainment VARCHAR(255),
+    training_experience TEXT,
+    practice_qualification VARCHAR(255),
+    sector VARCHAR(255),
+    qualification VARCHAR(255),
+    nc_certificate_number VARCHAR(100),
+    nc_date_of_issuance DATE,
+    nc_date_of_expiry DATE,
+    tm_certificate_number VARCHAR(100),
+    tm_date_of_issuance DATE,
+    tm_date_of_expiry DATE
+);
+
+
+<?php
+// Database connection details
+$host = 'localhost'; 
+$db = 'your_database_name'; 
+$user = 'your_username'; 
+$pass = 'your_password'; 
+
+// Create a new PDO instance
+try {
+    $pdo = new PDO("mysql:host=$host;dbname=$db", $user, $pass);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch (PDOException $e) {
+    die("Error: Could not connect. " . $e->getMessage());
+}
+
+// Check if the form is submitted
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Prepare an insert statement
+    $sql = "INSERT INTO nttc_data (province, last_name, first_name, middle_initial, extension, sex, address, training_institution, institution_type, email, contact_number, educational_attainment, training_experience, practice_qualification) 
+            VALUES (:province, :last_name, :first_name, :middle_initial, :extension, :sex, :address, :training_institution, :institution_type, :email, :contact_number, :educational_attainment, :training_experience, :practice_qualification)";
+    
+    if ($stmt = $pdo->prepare($sql)) {
+        // Bind variables to the prepared statement as parameters
+        $stmt->bindParam(':province', $_POST['province'], PDO::PARAM_STR);
+        $stmt->bindParam(':last_name', $_POST['last_name'], PDO::PARAM_STR);
+        $stmt->bindParam(':first_name', $_POST['first_name'], PDO::PARAM_STR);
+        $stmt->bindParam(':middle_initial', $_POST['middle_initial'], PDO::PARAM_STR);
+        $stmt->bindParam(':extension', $_POST['extension'], PDO::PARAM_STR);
+        $stmt->bindParam(':sex', $_POST['sex'], PDO::PARAM_STR);
+        $stmt->bindParam(':address', $_POST['address'], PDO::PARAM_STR);
+        $stmt->bindParam(':training_institution', $_POST['training_institution'], PDO::PARAM_STR);
+        $stmt->bindParam(':institution_type', $_POST['institution_type'], PDO::PARAM_STR);
+        $stmt->bindParam(':email', $_POST['email'], PDO::PARAM_STR);
+        $stmt->bindParam(':contact_number', $_POST['contact_number'], PDO::PARAM_STR);
+        $stmt->bindParam(':educational_attainment', $_POST['educational_attainment'], PDO::PARAM_STR);
+        $stmt->bindParam(':training_experience', $_POST['training_experience'], PDO::PARAM_STR);
+        $stmt->bindParam(':practice_qualification', $_POST['practice_qualification'], PDO::PARAM_STR);
+
+        // Attempt to execute the prepared statement
+        if ($stmt->execute()) {
+            echo "Records inserted successfully.";
+        } else {
+            echo "Error: Could not execute query: $sql. " . print_r($stmt->errorInfo(), true);
+        }
+    } else {
+        echo "Error: Could not prepare query: $sql. " . $pdo->errorInfo();
+    }
+
+    // Close statement
+    unset($stmt);
+}
+
+// Close connection
+unset($pdo);
+?>

@@ -1,0 +1,157 @@
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #000000, #0000FF, #FFFFFF); /* Black, blue, white gradient */
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    margin: 20px auto;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Slightly darker shadow for contrast */
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out forwards;
+}
+
+h2, h3 {
+    text-align: center;
+    color: #000000; /* Keeping text black for readability */
+}
+
+.header-buttons {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.header-buttons a {
+    background: linear-gradient(to right, #0000FF, #000000); /* Blue to black gradient */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.header-buttons a:hover {
+    background: linear-gradient(to right, #0000FF, #FFFFFF); /* Blue to white gradient on hover */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    background-color: #F5F5F5; /* Light background for table */
+}
+
+table th, table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.expired {
+    color: red;
+    font-weight: bold;
+}
+
+.expiring-soon {
+    color: orange;
+    font-weight: bold;
+}
+
+.active {
+    color: green;
+    font-weight: bold;
+}
+
+.pagination a {
+    display: inline-block;
+    padding: 8px 16px;
+    text-decoration: none;
+    color: #000000;
+    background-color: #0000FF; /* Blue pagination buttons */
+    border-radius: 5px;
+    margin: 2px;
+}
+
+.pagination a:hover {
+    background-color: #0056b3;
+    color: white;
+}
+
+.lock-container button {
+    background: linear-gradient(to right, #0000FF, #000000); /* Gradient for buttons */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.lock-container button:hover {
+    background: linear-gradient(to right, #0000FF, #FFFFFF); /* Hover effect with blue to white gradient */
+}
+
+.search-container input {
+    padding: 10px;
+    width: 50%;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+.search-container button {
+    padding: 10px;
+    background-color: #0000FF;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    margin-left: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.search-container button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+.modal-content {
+    background-color: #FFFFFF;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 400px;
+    border-radius: 10px;
+    animation: modalopen 0.3s ease;
+}
+
+.modal button {
+    background: linear-gradient(to right, #0000FF, #000000); /* Button gradient in modal */
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.modal button:hover {
+    background: linear-gradient(to right, #0000FF, #FFFFFF); /* Hover effect */
+}

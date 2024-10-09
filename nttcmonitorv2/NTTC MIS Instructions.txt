@@ -1,0 +1,21 @@
+1. Open the website for NTTC Monitoring and Information System.
+2. Click "Registry Update"
+3. Enter "tesda@29" as password 
+4. Upload the file for NTTC Consolidated Registry (Wait for the upload usually 15 seconds).
+5. Click "Lock In" then click "Open Monitoring"
+6. Success! You can now search for the specific data as desired...
+7. Use the search bar to search for Names, Qualifications, Certificate Number, Date of Issuances, Date of expiry.
+8. Click info button to see a modal pop up. (Data Privacy) and Legend.
+9. Click Statistics button to see the statistics of the data being uploaded.
+10. Click the info button to see a short well structured summary for the data
+Same Instructions apply for "Statistics 2"
+11. Click "Delete Button" this will redirect to a page where you can delete the entire database
+12. And by Clicking "Delete all data" this will delete all the data from the database
+13. Click "Ok" to upload another registry or click "X" to close the message box
+14. Click "Due for Renewal" to see the Trainers whose NTTC's will expire within the next 3 months 
+15. Click the specific Province to see the sorted data.
+16. Click the screenshot to take a snapshot of the table for reporting.
+17. Press "Print" button to print the raw data from the table or Press "CTRL + P" to have a more detailed printing Option.
+18. On the footer click the "ICT Unit" to see the legends behind the implementation and deployment of this project.
+19. Click the "Privacy Policy" to see the Policy.
+20. Click the "NTTC Guidelines" to see the Guidelines.
